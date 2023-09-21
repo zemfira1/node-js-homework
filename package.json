@@ -1,0 +1,30 @@
+{
+  "name": "node-js-homework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zemfira1/node-js-homework.git"
+  },
+  "author": "Zemfira_Abitova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zemfira1/node-js-homework/issues"
+  },
+  "homepage": "https://github.com/zemfira1/node-js-homework#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "commander": "^11.0.0",
+    "nanoid": "^5.0.1",
+    "yargs": "^17.7.2"
+  }
+}
