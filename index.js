@@ -12,29 +12,34 @@ program.parse();
 const options = program.opts();
 
 const invokeAction = async ({ action, id, name, email, phone }) => {
-  switch (action) {
-    case "list":
-      const contactsList = await contactsService.listContacts();
-      return console.log(contactsList);
+  try {
+    switch (action) {
+      case "list":
+        const contactsList = await contactsService.listContacts();
+        return console.log(contactsList);
 
-    case "get":
-      const contactById = await contactsService.getContactById(id);
-      return console.log(contactById);
+      case "get":
+        const contactById = await contactsService.getContactById(id);
+        return console.log(contactById);
 
-    case "add":
-      const newContact = await contactsService.addContact({
-        name,
-        email,
-        phone,
-      });
-      return console.log(newContact);
+      case "add":
+        const newContact = await contactsService.addContact({
+          name,
+          email,
+          phone,
+        });
+        return console.log(newContact);
 
-    case "remove":
-      const contactForDel = await contactsService.removeContact(id);
-      return console.log(contactForDel);
+      case "remove":
+        const contactForDel = await contactsService.removeContact(id);
+        return console.log(contactForDel);
 
-    default:
-      console.log("unknown");
+      default:
+        console.log("unknown");
+    }
+  } catch (error) {
+    console.log(error.message);
+    throw error;
   }
 };
 
